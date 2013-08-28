@@ -1,0 +1,1 @@
+// this should build all subprojects, run their tests, and run the "war" build which is in Abe.
