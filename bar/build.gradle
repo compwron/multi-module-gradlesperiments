@@ -1,0 +1,40 @@
+
+
+
+
+
+
+dependencies {
+    compile 'junit:junit:4.+'
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath group: 'net.saliman', name: 'gradle-cobertura-plugin', version: '1.1.2'
+    }
+}
+apply plugin: 'cobertura'
+
+cobertura {
+    coverageFormats = ['xml', 'html']
+    cobertura.coverageReportDir = file("coberturaReports")
+}
+
+//sonar {
+//    project {
+//        key = "CMS:SERVER"
+//        name = "SERVER"
+//        version = "1.0"
+//        dynamicAnalysis = "reuseReports"
+//        withProjectProperties { props ->
+//            props["sonar.core.codeCoveragePlugin"] = "cobertura"
+//        }
+//        coberturaReportPath = file("coberturaReports/coverage.xml")
+//        testReportPath = file("$buildDir/test-results")
+//    }
+//}
+
+

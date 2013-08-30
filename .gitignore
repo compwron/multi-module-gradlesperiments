@@ -1,2 +1,7 @@
 .idea
 gradlesperiment.iml
+gradleBuild
+.gradle
+build
+out
+gradlesperiment.iml

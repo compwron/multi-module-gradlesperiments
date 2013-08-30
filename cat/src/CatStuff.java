@@ -1,6 +1,8 @@
 public class CatStuff {
+    public DapStuff dap;
+
     public CatStuff(){
         System.out.println("Cat depends on Dap");
-        new DapStuff();
+        this.dap = new DapStuff();
     }
 }
