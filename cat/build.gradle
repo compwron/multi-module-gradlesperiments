@@ -1,48 +1,4 @@
-
-apply plugin: 'java'
-apply plugin: 'idea'
-
-repositories {
-    mavenCentral()
-}
-
-configurations {
-    provided
-}
-
-sourceSets {
-    main {
-        compileClasspath += configurations.provided
-
-        java {
-            srcDirs = ['src']
-        }
-    }
-
-    test {
-        java {
-            srcDirs = ['test']
-        }
-    }
-
-    buildDir = 'gradleBuild'
-}
-
-def coberturaReportsDirectory = file("coberturaReports")
-clean.doLast {
-    sourceSets.each {
-        ant.delete(dir: coberturaReportsDirectory)
-    }
-}
-
-idea {
-    module {
-        scopes.PROVIDED.plus += configurations.provided
-    }
-}
-
 dependencies {
-    compile 'junit:junit:4.+'
     compile project(':dap')
 }
 
@@ -60,19 +16,3 @@ cobertura {
     coverageFormats = ['xml', 'html']
     cobertura.coverageReportDir = file("coberturaReports")
 }
-
-//sonar {
-//    project {
-//        key = "CMS:SERVER"
-//        name = "SERVER"
-//        version = "1.0"
-//        dynamicAnalysis = "reuseReports"
-//        withProjectProperties { props ->
-//            props["sonar.core.codeCoveragePlugin"] = "cobertura"
-//        }
-//        coberturaReportPath = file("coberturaReports/coverage.xml")
-//        testReportPath = file("$buildDir/test-results")
-//    }
-//}
-
-

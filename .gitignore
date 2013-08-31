@@ -5,3 +5,4 @@ gradleBuild
 build
 out
 gradlesperiment.iml
+coberturaReports

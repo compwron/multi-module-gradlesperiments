@@ -1,5 +1,3 @@
-// this should build all subprojects, run their tests, and run the "war" build which is in Abe.
-
 allprojects {
     apply plugin: 'java'
     apply plugin: 'idea'
@@ -42,21 +40,8 @@ allprojects {
             scopes.PROVIDED.plus += configurations.provided
         }
     }
-}
 
-repositories {
-    mavenCentral()
-}
-
-configurations {
-    provided
-}
-
-buildscript {
-    repositories {
-        mavenCentral()
-    }
     dependencies {
-        classpath group: 'net.saliman', name: 'gradle-cobertura-plugin', version: '1.1.2'
+        compile 'junit:junit:4.+'
     }
 }

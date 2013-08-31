@@ -6,6 +6,7 @@ public class AbeStuffTest {
     @Test
     public void shouldHaveCat(){
         assertNotNull(new AbeStuff().cat);
+//        assertFalse(true);
     }
 
     @Test
